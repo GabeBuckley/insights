@@ -1,0 +1,379 @@
+/****************************************************
+**
+**        BUTTONS
+**
+****************************************************/
+
+button {
+	background-color: $colour-neutral;
+	color: $colour-text-on-neutral;
+	
+	border: 0.125rem solid $colour-neutral;
+	border-radius: $button-border-radius;
+	
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	
+	font-weight: bold;
+	font-size: 1rem;
+	
+	transition: all 0.2s;
+	
+	cursor: pointer;
+	
+	&:hover {
+		box-shadow: $elevation-level-1;
+	}
+	
+	&.primary {
+		background-color: $colour-primary;
+		border-color: $colour-primary;
+		color: $colour-text-on-primary;
+	}
+	
+	&.secondary {
+		background-color: $colour-secondary;
+		border-color: $colour-secondary;
+		color: $colour-text-on-secondary;
+	}
+	
+	&.highlight {
+		background-color: $colour-highlight;
+		border-color: $colour-highlight;
+		color: $colour-text-on-highlight;
+	}
+	
+	&.success {
+		background-color: $colour-success;
+		border-color: $colour-success;
+		color: $colour-text-on-success;
+	}
+	
+	&.warning {
+		background-color: $colour-warning;
+		border-color: $colour-warning;
+		color: $colour-text-on-warning;
+	}
+	
+	[class^="icon-"], [class*=" icon-"] {
+		display: inline-block;
+		margin-right: 0.75rem;
+	}
+}
+
+
+/****************************************************
+**
+**        ICONS
+**
+****************************************************/
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  @include display-as-icon;
+}
+
+.icon-menu:before {
+  content: "\e908";
+}
+.icon-user:before {
+  content: "\f007";
+}
+.icon-exclamation-triangle:before {
+  content: "\f071";
+}
+.icon-warning:before {
+  content: "\f071";
+}
+.icon-linkedin:before {
+  content: "\f08c";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-link:before {
+  content: "\f0c1";
+}
+.icon-angle-double-right:before {
+  content: "\f101";
+}
+.icon-sort-alpha-asc:before {
+  content: "\f15d";
+}
+.icon-sort-alpha-desc:before {
+  content: "\f15e";
+}
+.icon-youtube:before {
+  content: "\f167";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-child:before {
+  content: "\f1ae";
+}
+.icon-maternity:before {
+  content: "\e903"; 
+}
+.icon-aged_care:before {
+  content: "\e905";
+}
+.icon-scalpel:before {
+  content: "\e906";
+}
+.icon-hospital_icon:before {
+  content: "\e901";
+}
+.icon-play_circle_filled:before {
+  content: "\e900";
+}
+.icon-info:before {
+  content: "\e904";
+}
+.icon-search:before {
+  content: "\e902";
+}
+
+
+/****************************************************
+**
+**        INFO BOX
+**
+****************************************************/
+
+section.info-box {
+	box-sizing: border-box;
+	border: 0.0675rem solid $colour-secondary;
+	clear: both;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	
+	padding: 1.25rem;
+	padding-left: 6rem;
+	
+	position: relative;
+	
+	
+	
+	@include for-medium-screens {
+		@include page-width-lge;
+	}
+	
+	i {
+		display: inline-block;
+		color: $colour-highlight;
+		font-size: 4rem;
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+	}
+	
+	h2 {
+		color: $colour-highlight;
+		margin-top: 0.75rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	p {
+		font-size: 0.875rem;
+	}
+}
+
+div.hover-info-box {
+	position: absolute;
+	z-index: 10000;
+	
+	box-sizing: content-box;
+	border: 0.125rem solid $colour-primary;
+	border-radius: 1.25rem;
+	border-top-left-radius: 0;
+	clear: both;
+	
+	background: $colour-neutral;
+	color: $colour-text-on-neutral;
+	
+	font-family: $body-typeface;
+	font-size: 0.75rem;
+	font-weight: bold;
+	
+	overflow: hidden;
+	
+	width: unset;
+	height: unset;
+	opacity: 0;
+	padding: 1rem;
+	left: 99%;
+	top: 51%;
+	
+	
+	transition: all 0.5s ease-in-out 0.25s;
+	
+	white-space: nowrap;
+	
+}
+
+/****************************************************
+**
+**        SEARCH FORMS
+**
+****************************************************/
+
+
+nav.tools-menu form#search-form {
+	.search-wrapper {
+		
+		
+		label {
+			display: none;
+		}
+		
+		input[type="text"] {
+			box-sizing: border-box;
+			
+			width: 65%;
+			
+			padding-top: 0.25rem;
+			padding-bottom: 0.25rem;
+			padding-left: 1.25rem;
+			padding-right: 1.25rem;
+			
+			background-color: adjust-color($colour-highlight, $lightness: 10%);
+			border: 0.25rem solid  adjust-color($colour-highlight, $lightness: 10%);
+			
+			color: $colour-text-on-highlight;
+			
+			cursor: pointer;
+
+			&:focus {
+				box-shadow: $elevation-level-1;
+				outline: none;
+			}
+			
+			&::-webkit-input-placeholder { /* Edge */
+			  color: $colour-text-on-body;
+			}
+
+			&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			  color: $colour-text-on-body;
+			}
+
+			&::placeholder {
+			  color: $colour-text-on-body;
+			}
+		}
+		
+		input[type="submit"] {
+			background-image: url('/res/svg/search-icon.svg');
+			background-repeat: no-repeat;
+			background-position: 0.5rem center;
+			background-color: $colour-highlight;
+			color: $colour-text-on-highlight;
+
+			border: 0.125rem solid $colour-highlight;
+			border-radius: $button-border-radius;
+
+			padding: 0.25rem;
+			padding-right: 2.25rem;
+
+			font-weight: normal;
+			font-size: 1rem;
+
+			transition: all 0.2s;
+
+			cursor: pointer;
+			
+			&[value="Search"] {
+				display: none;
+			}
+			
+			&[value=""] {
+				width: 2rem;
+				display: inline-block;
+			}
+			
+			&:hover {
+				box-shadow: $elevation-level-1;
+			}
+		}
+		
+	}
+}
+
+
+/****************************************************
+**
+**        TABLES
+**
+****************************************************/
+
+$table-border-width: 0.0675rem;
+
+table.comparison-table {
+	clear: both;
+	margin-top: 2rem;
+	width: 100%;
+	
+	@include for-medium-screens {
+		@include page-width-lge;
+	}
+	
+	tr {
+		
+	}
+	
+	th {
+		
+	}
+	
+	td {
+		padding: 0.75rem 0.5rem;
+	}
+	
+	thead {
+		tr {
+			background-color: $colour-secondary;
+			color: $colour-text-on-secondary;
+			border: $table-border-width solid $colour-secondary;
+			font-size: 1.25rem;
+			font-weight: bold;
+			
+			&:last-child {
+				background-color: $colour-highlight;
+				color: $colour-text-on-highlight;
+				border: $table-border-width solid $colour-highlight;
+			}
+		}
+		
+		
+	}
+	
+	tbody {
+		tr {
+			background-color: $colour-body;
+			color: $colour-text-on-body;
+			border: $table-border-width solid $colour-text-on-body;
+			
+			&:nth-child(even) {
+				background-color: $colour-neutral;
+				color: $colour-text-on-neutral;
+			}
+		}
+	}
+	
+	tfoot {
+		
+	}
+}
+
+/****************************************************
+**
+**        IMPORTED COMPONENTS
+**
+****************************************************/
+
+@import "./dev/components/surgical-procedure-search";

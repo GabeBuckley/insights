@@ -1,0 +1,127 @@
+<div class="progress-steps">
+	<div class="step-1 current-step">
+		<div class="step-head">Step 1: Identify surgical procedure</div>
+		<div class="step-body"></div>
+	</div>
+	<div class="step-2">
+		<div class="step-head">Step 2: Identify child/adult</div>
+		<div class="step-body"></div>
+	</div>
+	<div class="step-3">
+		<div class="step-head">Step 3: Identify Hospital</div>
+		<div class="step-body"></div>
+	</div>
+</div>
+<div class="step-1-body current-step">
+	<div class="table-body-wrapper">
+	<table class="surgical-procedure-search">
+		<thead>
+			<tr>
+				<td>
+					<label>Identify Surgical Procedure or click procedure below</label>
+				</td>
+				<td>
+					<input id="procedure-search" type="text" placeholder="Enter search terms here" />
+				</td>
+				<td>
+					<button>Back </button>
+					<button class="primary">Next </button>
+				</td>
+			</tr>
+		</thead>
+	</table>
+	<table class="surgical-procedure-search">
+		<thead>
+			<tr>
+				<td>
+					Procedure <i id="procedure-table-sort" data-state="alpha-asc" class="icon-sort-alpha-asc">
+					<div class="hover-info-box" data-for="procedure=table=sort" role="tooltip">Sort procedures alphabetically</div>
+
+					</i>
+				</td>
+				<td>
+					Description
+				</td>
+			</tr>
+		</thead>
+	</table>
+</div>
+	<div class="table-body-wrapper">
+		<table class="surgical-procedure-search">
+			<tbody id="procedure_list"></tbody>
+		</table>
+	</div>
+</div>
+
+<div class="step-2-body">
+	<div class="table-body-wrapper">
+		<table class="surgical-procedure-search">
+			<thead>
+				<tr>
+					<td>
+						<label>Identify whether child or adult</label>
+					</td>
+					<td>
+						<button>Back </button>
+						<button class="primary">Next </button>
+					</td>
+				</tr>
+			</thead>
+		</table>
+		<table class="surgical-procedure-search">
+		<thead>
+			<tr>
+				<td>
+					<input value="child" type="radio" name="child_adult" /> <icon class="icon-child"></icon> Child (0 to 16 years old)
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					
+					<input value="adult" type="radio" name="child_adult" /> <icon class="icon-user"></icon> Adult (above 16 years old)
+				
+				</td>
+				<td></td>
+			</tr>
+		</thead>
+	</table>
+	</div>
+</div>
+
+<div class="step-3-body">
+	<div class="table-body-wrapper">
+		<table class="surgical-procedure-search">
+			<thead>
+				<tr>
+					<td>
+						<label>Identify hospital</label>
+					</td>
+					<td>
+						<button>Back </button>
+						<button class="primary">Next </button>
+					</td>
+				</tr>
+			</thead>
+		</table>
+		<table class="surgical-procedure-search">
+		<thead>
+			<tr>
+				<td>
+					<input value="child" type="radio" name="child_adult" /> <icon class="icon-child"></icon> Child (0 to 16 years old)
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>
+					
+					<input value="adult" type="radio" name="child_adult" /> <icon class="icon-user"></icon> Adult (above 16 years old)
+				
+				</td>
+				<td></td>
+			</tr>
+		</thead>
+	</table>
+	</div>
+</div>
+	

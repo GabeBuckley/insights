@@ -1,0 +1,31 @@
+{
+  "name": "qld-health-insights-dialog",
+  "version": "1.0.0",
+  "description": "Queensland Health Insights Web Site",
+  "main": "index.js",
+  "scripts": {
+    "compile": "webpack",
+    "run": "http-server ./dist/insights"
+  },
+  "author": "Gabe Buckley",
+  "license": "Commercial",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^4.2.0",
+    "grunt": "^1.0.4",
+    "grunt-accessibility-ext": "^6.1.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-webpack": "^3.1.3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  }
+}

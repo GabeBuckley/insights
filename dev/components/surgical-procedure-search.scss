@@ -1,0 +1,331 @@
+div.progress-steps {
+	width: 100%;
+	margin-top: 1rem;
+	
+	
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+
+	@include for-medium-screens {
+		@include page-width-lge;
+		flex-direction: row;
+	}
+
+	&>div{
+		flex:1;
+		display: inline-block;
+
+
+		align-self: center;
+		width: 100%;
+		font-size: 0.875rem;
+
+		@include for-medium-screens {
+			font-size: 1rem;
+		}
+		
+
+		div.step-head {
+			background-color: $colour-secondary;
+			color: $colour-text-on-secondary;
+			min-height: 2rem;
+			text-align: center;
+			padding: 0.75rem;
+			font-weight: bold;
+			border: 0.0675rem solid $colour-text-on-secondary;
+		}
+
+		div.step-body {
+			background-color: $colour-primary;
+			color: $colour-text-on-primary;
+			min-height: 3rem;
+			text-align: center;
+			padding: 0.75rem;
+			border: 0.0675rem solid $colour-text-on-primary;
+		}
+
+		&.current-step {
+			border: 0.0675rem solid $colour-highlight;
+			box-shadow: $elevation-level-1;
+			
+			div.step-head, div.step-body {
+				border-color: 	$colour-highlight;
+			}
+		}
+	}
+}
+
+.step-1-body, .step-2-body, .step-3-body {
+	display: none;
+	margin-top: 2rem;
+}
+
+.current-step {
+	display: block;
+}
+
+.table-body-wrapper {
+	clear: both;
+
+	
+	
+	
+	@include for-medium-screens {
+		@include page-width-lge;
+	}
+	
+	
+	
+	table.surgical-procedure-search {
+		width: 100%;
+		margin: 0;
+		
+		box-sizing: border-box;
+		
+		&:last-child {
+			thead {
+				td:first-child {
+					display: block;
+					width: 100%;
+					
+					
+					@include for-medium-screens {
+						display: table-cell;
+						width: 35%;
+					}
+					
+				}
+				td:last-child {
+					display: none;
+					
+					@include for-medium-screens {
+						display: table-cell;
+						width: 65%;
+					}
+				}
+			}
+			
+			tbody {
+				td:first-child {
+					display: block;
+					width: 100%;
+					font-weight: bold;
+					
+					@include for-medium-screens {
+						display: table-cell;
+						width: 35%;
+						border-right: $table-border-width solid $colour-text-on-body;
+					}
+				}
+				td:last-child {
+					display: block;
+					width: 100%;
+					
+					@include for-medium-screens {
+						display: table-cell;
+						width: 65%;
+					}
+				}
+			}
+		}
+
+		tr {
+
+		}
+
+		th {
+
+		}
+
+		td {
+			padding: 0.75rem 0.5rem;
+			border: none;
+			display: block;
+			width: 100%;
+			
+			@include for-medium-screens {
+				display: table-cell;
+				width: auto;
+			}
+		}
+
+		thead {
+			tr {
+				background-color: $colour-secondary;
+				color: $colour-text-on-secondary;
+				border: $table-border-width solid $colour-secondary;
+				font-size: 1.25rem;
+				font-weight: bold;
+				
+				i {
+					display: inline-block;
+					float: right;
+					cursor: pointer;
+					padding: 0.5rem;
+					margin-right: 1rem;
+					position: relative;
+					
+					div.hover-info-box {
+						left: -15rem;
+						top: 99%;
+					}
+					
+					&:hover {
+						box-shadow: $elevation-level-1;
+						
+						div.hover-info-box {
+							width: unset;
+							height: unset;
+							opacity: 1;
+							padding: 1rem;
+							
+							border-radius: 1.25rem;
+							border-top-right-radius: 0;
+							transition: all 0.5s ease-in-out 0.5s;
+							
+							
+							@include for-medium-screens {
+								border-radius: 1.25rem;
+								border-top-left-radius: 0;
+								left: 99%;
+								top: 51%;
+							}
+						}
+					}
+				}
+
+				
+				
+				
+
+				button {
+					padding-top: 0.25rem;
+					padding-bottom: 0.25rem;
+				}
+
+				input[type="text"] {
+					display: inline-block;
+					width: 80%;
+
+					box-sizing: border-box;
+
+					padding-top: 0.25rem;
+					padding-bottom: 0.25rem;
+					padding-left: 1.25rem;
+					padding-right: 1.25rem;
+
+					background-color: adjust-color($colour-highlight, $lightness: 10%);
+					border: 0.25rem solid  adjust-color($colour-highlight, $lightness: 10%);
+
+					color: $colour-text-on-highlight;
+
+					cursor: pointer;
+
+					&:focus {
+						box-shadow: $elevation-level-1;
+						outline: none;
+					}
+
+					&::-webkit-input-placeholder { /* Edge */
+					  color: $colour-text-on-body;
+					}
+
+					&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+					  color: $colour-text-on-body;
+					}
+
+					&::placeholder {
+					  color: $colour-text-on-body;
+					}
+
+				}
+			}
+
+			
+		}
+
+		tbody {
+			
+			
+			tr {
+				background-color: $colour-body;
+				color: $colour-text-on-body;
+				border: $table-border-width solid $colour-text-on-body;
+				font-size: 0.875rem;
+				
+				cursor: pointer;
+				
+				transition: all 0.2s;
+
+				&:nth-child(even) {
+					background-color: $colour-neutral;
+					color: $colour-text-on-neutral;
+				}
+				
+				&:hover {
+					background-color: adjust-color($colour-highlight, $lightness: 50%);
+				}
+				
+				&.selected-procedure {
+					background: $colour-primary;
+					color: $colour-text-on-primary;
+					border: 2px solid $colour-highlight;
+					
+					td {
+						font-style: italic;
+					}
+				}
+			}
+		}
+
+		tfoot {
+
+		}
+		
+		&:last-child {
+			thead {
+				tr {
+					background-color: $colour-highlight;
+					color: $colour-text-on-highlight;
+					border: $table-border-width solid $colour-highlight;
+				}
+			}
+					
+					
+					
+		}
+		
+		&:first-child {
+			thead:first-child {
+				tr:first-child {
+					td:last-child {
+						text-align: right;
+					}
+				}
+			}
+		}
+	}
+	
+	&:last-child {
+		margin-top: 0;
+		max-height: 38rem;
+		overflow-y: scroll;
+		overflow-x: none;
+		
+		table, tbody, tr {
+			overflow: hidden;
+		}
+		
+		td:first-child {
+			overflow: hidden;
+			width: 35%;
+			border-right: $table-border-width solid $colour-text-on-body;
+		}
+	}
+	
+}

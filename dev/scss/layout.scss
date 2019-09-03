@@ -1,0 +1,602 @@
+/********************************************************
+**
+** HEADERS
+**
+********************************************************/
+
+	header.site-header, div#header {
+		clear: both;
+		position: relative;
+		
+		width: 100%;
+		margin: 0;
+		
+		padding-top: 0.125rem;
+		overflow: hidden;
+		
+				
+		background-color: $colour-primary;
+		color: $colour-text-on-primary;
+		
+		/** marking breakpoints with borders along the top. delete in production **/
+		
+		/*
+		@include for-small-screens {
+			border-top: 4px solid fuchsia;
+		}
+		
+		@include for-medium-screens {
+			border-top: 4px solid purple;
+		}
+		
+		@include for-large-screens {
+			border-top: 4px solid  green;
+			
+			background: linear-gradient(to bottom, $colour-primary 0%,$colour-primary 103px,$colour-primary 103px,$colour-secondary 103px,$colour-secondary 100%);
+		}
+		
+		@include for-extra-large-screens {
+			border-top: 4px solid  red;
+		}
+
+		*/
+		
+		@include for-large-screens {
+			background: linear-gradient(to bottom, $colour-primary 0%,$colour-primary 103px,$colour-primary 103px,$colour-secondary 103px,$colour-secondary 100%);
+		}
+		
+		
+		div.header-content {
+			text-align: left;
+			position: relative;
+			
+			width: 100%;
+			margin: 0;
+			
+			@include for-medium-screens {
+				@include page-width-lge;
+			};
+						
+			a#qg-coa {
+				display: block;
+				
+				img {
+					width: 85%;
+					height: auto;
+					margin: 0.25rem;
+					max-width: 20rem;
+				}
+			}
+
+			h2 {
+				display: block;
+				font-weight: 300;
+				
+				margin: 0.25rem;
+				font-size: 1rem;
+				
+			}
+
+
+		}
+	}
+
+
+/********************************************************
+**
+** PAGE SECTIONS
+**
+********************************************************/
+
+*{
+	main > section, main > nav {
+		clear:both;
+	}
+
+	section.hero-banner {
+		box-sizing: border-box;
+		height: $hero-banner-height;
+		min-height: $hero-banner-height;
+		max-height: $hero-banner-height;
+
+		background-size: cover;
+		background-position: center center;
+
+		text-align: center;
+
+		padding-top: 1rem;
+		
+		@include for-small-screens {
+			height: $hero-banner-height-med;
+			min-height: $hero-banner-height-med;
+			max-height: $hero-banner-height-med;
+		}
+
+
+		h1, h2 {
+			color: $colour-text-on-primary;
+			font-weight: bold;
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+			line-height: 2.5rem;
+			margin-bottom: 1rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+	}
+
+	section.hero-banner.hospital {
+		background-image: url("/res/jpg/hospital_interior.jpg");
+	}
+
+	section.home-page-links {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-content: flex-start;
+		align-self: center;
+		
+		@include for-medium-screens {
+			flex-direction: row;
+			
+			@include page-width-lge;
+		}
+
+		div.home-page-link {
+			flex: 1;
+			clear: both;
+			margin: 1rem;
+			margin-top: 1.5rem;
+
+			padding-bottom: 3rem;
+			position: relative;
+
+			text-align: left;
+
+
+
+
+			[class^="icon-"], [class*=" icon-"] {
+				font-size: 3rem;	
+				color: $colour-highlight;
+				display: block;
+				min-width: 3rem;
+				float:left;
+				margin: 1rem;
+			}
+
+			h2 {
+				font-size: 1.25rem;
+				line-height: 1.25rem;
+				padding-top: 1rem;
+				color: $colour-primary;
+			}
+
+			p {
+				clear: both;
+				font-size: 0.875rem;
+			}
+
+			button {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				
+			}
+		}
+	}
+
+	section.hospital-info {
+	
+
+		padding-top: 1rem;
+		
+		@include for-medium-screens {
+			@include page-width-lge;
+		}
+	
+	
+	h1 {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+		
+		font-weight: bold;
+		color: $colour-highlight;
+		
+		border-bottom: 0.0625rem solid $colour-primary;
+		padding-bottom: 0.5rem;
+		
+		position: relative;
+		
+		text-align: center;
+		
+		
+		a {
+			display: none;
+			position: absolute;
+			right: 1rem;
+			bottom: 0;
+			line-height: 2rem;
+			font-size: 0.875rem;
+			
+			vertical-align: text-bottom;
+			
+			color: $colour-primary;
+			
+			font-weight: normal;
+			
+			text-decoration: underline;
+			
+			@include for-small-screens {
+				display: inline-block;
+			}
+		}
+	}
+	
+	$info-block-icon-size: 1.5rem;
+	
+	div.info-block {
+		padding: 0.675rem;
+
+		
+		@include for-large-screens {
+			max-width: 35%;
+			float: left;
+		}
+		
+		h2 {
+			color: $colour-highlight;
+			margin-top: 0.75rem;
+			margin-bottom: 0.5rem
+		}
+		
+		p {
+			font-size: 0.875rem;
+			position: relative;
+			
+			a {
+				color: $colour-highlight;
+			}
+			
+			i {
+				color: $colour-highlight;
+				font-size: $info-block-icon-size;
+				display: inline-block;
+				position: absolute;
+				left: 0;
+			}
+			
+			i + strong, i + span {
+				display: inline-block;
+				margin-left: ($info-block-icon-size + 0.75rem);
+			}
+		}
+	}
+	
+	div.hospital-map {
+		z-index: 0;
+		padding: 0.675rem;
+
+		
+		
+		@include for-large-screens {
+			width: 60%;
+			max-width: 60%;
+			float:right;
+		}
+		
+		iframe {
+			width: 100%;
+			height: 100%;
+			min-height: 20rem;
+		}
+	}
+}
+
+	
+
+}
+
+
+
+/********************************************************
+**
+** SITE AND PAGE FOOTERS
+**
+********************************************************/
+
+footer {
+	box-sizing: border-box;
+	clear:both;
+	width: 100%;
+	background-color: lighten( $colour-secondary, 10% );
+	padding: 0.75rem;
+	color: $colour-text-on-secondary;
+	
+	margin-top: 1rem;
+	
+	display: flex;
+	
+	flex-direction: column;
+	
+	
+	
+	@include for-medium-screens {
+		flex-direction: row;	
+		justify-content: center;
+	}
+
+	&:last-of-type {
+		background-color: $colour-secondary;
+		border-top: 0.0675rem dashed $colour-text-on-primary;
+		margin-top: 0;
+		
+		display: block;
+		
+		text-align: center;
+		
+		a {
+			color: $colour-text-on-secondary;
+		}
+		
+		h2 {
+			display: none;
+		}
+		
+		div.footer-left {
+			display: inline-block;
+			width: 100%;
+			max-width: $lge-page-width /2;
+			margin-left: auto;
+			
+			p.legal {
+				
+			}
+			
+			
+		}
+		
+		
+		div.footer-right {
+			display: inline-block;
+			width: 100%;
+			max-width: $lge-page-width /2;
+			margin-right: auto;
+			
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+
+				width: 100%;
+				max-width: $lge-page-width /2;
+				margin-right: auto;
+
+
+				li {
+					display: inline-block;
+					font-size: 0.875rem;
+					margin-top: 0.25rem;
+					margin-bottom: 0.25rem;
+					margin-left: 0.5rem;
+					margin-right: 0.5rem;
+					align-self: center;
+
+					@include for-medium-screens {
+						padding-right: 1rem;
+						border-right: 0.0675rem solid $colour-text-on-secondary;
+						
+						&:last-child {
+							border-right: none;
+						}
+					}
+					
+					a {
+						color: $colour-text-on-secondary;
+					}
+				}
+			}
+		}
+		
+		div.footer-bottom {
+			width: 100%;
+				max-width: $lge-page-width;
+			margin-left: auto;
+				margin-right: auto;
+			
+			p {
+				width: 100%;
+				text-align: center;
+				clear: both;
+
+				
+			
+				
+			
+				img {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+		
+		
+		
+	}
+	
+	h2 {
+		font-size: 1rem;
+		
+		margin-top: 0.5rem;
+		margin-bottom: 0.75rem;
+	}
+	
+	&>div {
+		
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		align-items:  center;
+		align-content: space-around;
+		
+		
+		max-width: $lge-page-width /2;
+		
+		@include for-medium-screens {
+			flex-direction: row;
+			
+			&:first-child {
+				margin-left: auto;
+			}
+			&:last-child {
+				margin-right: auto;
+				flex-wrap: wrap;
+				
+				section:last-child {
+					min-width: $lge-page-width /2;
+					
+					margin-top: 1rem;
+					
+					i {
+						
+						
+						font-size: 2rem;
+						width: 2rem;
+						height: 2rem;
+						padding: 1rem;
+					}
+					
+				}
+			}
+		}
+		
+		&:last-child {
+			section:last-child {
+				border-top: 0.0675rem dashed $colour-text-on-primary;
+			width: 100%;
+			display: flex;
+			  align-items: flex-start;
+			  flex-wrap: nowrap;
+			justify-content: space-around;
+			  height: 100%;
+			}
+			
+			i {
+						display: inline-block;
+						font-size: 1rem;
+						width: 1rem;
+						height: 1rem;
+						padding: 0.5rem;
+						text-align: center;
+						background-color: $colour-highlight;
+						
+						border-radius: 50%;
+						transition: all 0.25s;
+						cursor: pointer;
+						
+						&:hover {
+							background-color: lighten( $colour-highlight, 10% );
+							box-shadow: $elevation-level-1;
+						}
+					}
+		}
+	}
+	
+	section {
+		flex: 1;
+		display: inline-block;
+		
+		text-align: left;
+		width: 100%;
+		
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		
+		@include for-medium-screens {
+			border-bottom: none;
+			margin-left: 0.375rem;
+			margin-right: 0.375rem;
+			min-width: $lge-page-width /5;
+		}
+		
+		&:last-child {
+			border-right: 0 none transparent;
+			
+		}
+		
+		a {
+			color: $colour-text-on-secondary;
+		}
+		
+		h3 {
+			flex:0;
+			width: 100%;
+			display: block;
+			color: $colour-text-on-secondary;
+			font-size: 0.875rem;
+			margin-bottom: 0.5rem;
+			padding-bottom: 0.25rem;
+			border-bottom: 0.0675rem dashed $colour-text-on-primary;
+		}
+		
+		p {
+			font-size: 0.75rem;
+		}
+		
+		button {
+			width: 100%;
+		}
+		
+		ul {
+			display: block;
+			margin: 0;
+			padding: 0;
+			
+			margin-left: 2rem;
+			
+			margin-top: 0.25rem;
+			margin-bottom: 0.25rem;
+			
+			li {
+				display: block;
+				font-size: 0.75rem;
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+				
+				&::before {
+					content: "\f101";
+					@include display-as-icon;
+					display: inline-block;
+					width: 1rem;
+					
+				}
+				
+				
+			}
+			
+			&.sites {
+				li {
+					&::before {
+						content: "\f0c1";
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen {
+
+	.print-version {
+		display: none;
+	}
+}

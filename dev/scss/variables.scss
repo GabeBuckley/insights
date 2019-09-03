@@ -1,0 +1,124 @@
+
+
+$colour-primary: #065687;
+$colour-text-on-primary: #FFFFFF;
+
+$colour-secondary: #063653 ;
+$colour-text-on-secondary: #FFFFFF;
+
+$colour-highlight: #3F7DA2;
+$colour-text-on-highlight: #FFFFFF;
+
+$colour-neutral: #EEF4F3;
+$colour-text-on-neutral: #040707;
+
+$colour-success: #4E6E5D;
+$colour-text-on-success: #FFFFFF;
+
+$colour-warning: #6B0F1A;
+$colour-text-on-warning: #FFFFFF;
+
+$colour-body: #FFFFFF;
+$colour-text-on-body: #040707;
+
+
+
+
+
+
+$body-typeface: Verdana,Geneva,sans-serif;
+
+
+
+$header-height: 7.625rem;
+$hero-banner-height: 31.5rem;
+$hero-banner-height-med: 21.5rem;
+
+$button-border-radius: 0.0675rem;
+
+$elevation-level-1: 2px 2px 6px 2px rgba(0,0,0,0.6);
+
+$breakpoint-xxs: 320px;
+
+$xxs-page-width: 20rem;
+
+@mixin page-width-xxs {
+	width: $xxs-page-width;
+	max-width: $xxs-page-width;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+@mixin page-width-xs {
+	width: $xxs-page-width;
+	max-width: $xxs-page-width;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+
+@mixin for-extra-small-screens {
+	@media (max-width: 599px) { @content; }
+}
+
+
+@mixin for-small-screens {
+	@media (min-width: 600px) { @content; }
+}
+
+@mixin for-medium-screens {
+	@media (min-width: 900px) { @content; }
+}
+
+@mixin for-large-screens {
+	@media (min-width: 1200px) { @content; }
+}
+
+@mixin for-extra-large-screens {
+	@media (min-width: 1800px) { @content; }
+}
+
+$breakpoint-lge: 1140px;
+
+$lge-page-width: 71.75rem;
+
+@mixin page-width-lge {
+	width: 100%;
+	max-width: $lge-page-width;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin display-as-icon {
+	font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*******
+
+@include for-small-screens {
+	
+}
+
+@include for-medium-screens {
+	
+}
+
+@include for-large-screens {
+	
+}
+
+@include for-extra-large-screens {
+	
+}
+
+*******/
